@@ -132,21 +132,27 @@ include_once JPATH_THEMES.'/'.$this->template.'/helper.php';
 
     <footer id="footer" class="footer-wrapper">
         <?php if ($this->countModules('contact')): ?>
-        <div class="container footer-contact">
-            <jdoc:include type="modules" name="contact" style="none" />
-        </div>
+        <section class="footer-contact padding-top-3x">
+            <div class="container">
+                <jdoc:include type="modules" name="contact" style="none" />
+            </div>
+        </section>
         <?php endif; ?>
 
-        <?php if ($this->countModules('contact')): ?>
-        <div class="container footer-nav">
-            <jdoc:include type="modules" name="contact" style="none" />
-        </div>
+        <?php if ($this->countModules('footer')): ?>
+        <section class="footer-nav padding-both-4x">
+            <div class="container">
+                <jdoc:include type="modules" name="footer" style="none" />
+            </div>
+        </section>
         <?php endif; ?>
 
         <?php if ($this->countModules('copyright')): ?>
-        <div class="container footer-copyright">
-            <jdoc:include type="modules" name="copyright" style="none" />
-        </div>
+        <section class="footer-copyright padding-both-05x">
+            <div class="container">
+                <jdoc:include type="modules" name="copyright" style="none" />
+            </div>
+        </section>
         <?php endif; ?>
     </footer>
 

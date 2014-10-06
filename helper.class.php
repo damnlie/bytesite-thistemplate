@@ -69,7 +69,7 @@ class ThisTemplateHelper
         unset($doc->_styleSheets['/components/com_rsform/assets/css/front.css']);
 
         // Google Fonts
-        $doc->addStyleSheet('//fonts.googleapis.com/css?family=Open+Sans:400,300,700');
+        $doc->addStyleSheet('//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 
         switch($cssmode)
         {
@@ -101,7 +101,7 @@ class ThisTemplateHelper
                 $cssFile = $templateDir.'css/compiled.css';
                 $lessFile = $templateDir.'less/template.less';
                 if(filemtime($lessFile) > filemtime($cssFile)) {
-                    require_once $templateDir.'lib/vendor/oyejorge/less.php/lessc.inc.php';
+                    require_once $templateDir.'lib/oyejorge/less.php/lessc.inc.php';
                     $parser = new Less_Parser();
                     $parser->parseFile($lessFile, JURI::root());
                     $css = $parser->getCss();
@@ -200,7 +200,7 @@ class ThisTemplateHelper
                 // using an image
                 if ($site_logo AND $site_title)
                 {
-                    $logo = '<a href="' . $site_url . '/" class="navbar-brand"><img src="' . JURI::root() . $site_logo . '" alt="' . htmlspecialchars($site_title) . '" /></a>';
+                    $logo = '<a href="' . $site_url . '/" class="navbar-brand logo"><img src="' . JURI::root() . $site_logo . '" alt="' . htmlspecialchars($site_title) . '" /></a>';
                     return $logo;
                 }
                 break;
@@ -208,7 +208,7 @@ class ThisTemplateHelper
                 // using an SVG image
                 if ($site_logosvg AND $site_title)
                     {
-                        $logo = '<a href="' . $site_url . '/" class="navbar-brand"><img src="' . JURI::root() . 'images/' . $site_logosvg . '" alt="' . htmlspecialchars($site_title) . '" class="inject-me" /></a>';
+                        $logo = '<a href="' . $site_url . '/" class="navbar-brand logo"><img src="' . JURI::root() . 'images/' . $site_logosvg . '" alt="' . htmlspecialchars($site_title) . '" class="inject-me" /></a>';
                         // using SVGInjector to inject the image
                         $this->getSVGInjector($template);
                         return $logo;
