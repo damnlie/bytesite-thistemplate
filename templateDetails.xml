@@ -113,17 +113,6 @@
             </fieldset>
 
             <fieldset name="advanced">
-                <field name="svginjection"
-                    type="radio"
-                    class="btn-group btn-group-yesno"
-                    default="0"
-                    label="TPL_THISTEMPLATE_FIELD_SVGINJECTION_LABEL"
-                    description="TPL_THISTEMPLATE_FIELD_SVGINJECTION_DESC"
-                >
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
-                </field>
-
                 <field
                     name="analytics"
                     type="list"
@@ -168,6 +157,28 @@
                 </field>
             </fieldset>
 
+            <fieldset name="js" label="TPL_THISTEMPLATE_FIELDSET_JS_LABEL">
+                <field name="svginjection"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    label="TPL_THISTEMPLATE_FIELD_SVGINJECTION_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_SVGINJECTION_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="dropdownHover" 
+                    type="radio" 
+                    class="btn-group btn-group-yesno" 
+                    default="1" 
+                    label="TPL_THISTEMPLATE_FIELD_DROPDOWNHOVER_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_DROPDOWNHOVER_DESC">
+                        <option value="1">JYES</option>
+                        <option value="0">JNO</option>
+                </field>
+            </fieldset>
         </fields>
     </config>
 
