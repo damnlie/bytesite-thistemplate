@@ -10,30 +10,14 @@
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
-$itemAttributes = array();
-$itemAttributes['class'] = $item->anchor_css ? $item->anchor_css : null;
-$itemAttributes['title'] = $item->anchor_title ? $item->anchor_title : null;
-
-// Convert attributes to string
-$attributes = '';
-
-if (!empty($itemAttributes))
-{
-	foreach ($itemAttributes as $attribute => $value)
-	{
-		if (null !== $value)
-		{
-			$attributes .= ' ' . $attribute . '="' . trim((string) $value) . '"';
-		}
-	}
-}
-var_dump($attributes);
+$class = $item->anchor_css ? $item->anchor_css : '';
+$title = $item->anchor_title ? 'title="' . $item->anchor_title . '" ' : '';
 
 if ($item->menu_image)
-{
-	$item->params->get('menu_text', 1) ?
-	$linktype = '<img src="' . $item->menu_image . '" alt="' . $item->title . '" /><span class="image-title">' . $item->title . '</span> ' :
-	$linktype = '<img src="' . $item->menu_image . '" alt="' . $item->title . '" />';
+	{
+		$item->params->get('menu_text', 1) ?
+		$linktype = '<img src="' . $item->menu_image . '" alt="' . $item->title . '" /><span class="image-title">' . $item->title . '</span> ' :
+		$linktype = '<img src="' . $item->menu_image . '" alt="' . $item->title . '" />';
 }
 else
 {
@@ -47,21 +31,22 @@ $flink = JFilterOutput::ampReplace(htmlspecialchars($flink));
 if ($item->isParentAnchor)
 {
 	$linktype .= ' <span class="caret"></span>';
-	if ($attributes == '') $attributes = 'class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" ';
+	$class .= 'dropdown-toggle';
+	$attributes = 'data-toggle="dropdown" data-hover="dropdown"';
 }
 
 switch ($item->browserNav) :
 	default:
 	case 0:
-?><a <?php echo $attributes; ?><?php echo $class; ?>href="<?php echo $flink; ?>" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
+?><a href="<?php echo $flink; ?>" <?php echo $title; ?> class="<?php echo $class; ?>" <?php echo $attributes; ?>><?php echo $linktype; ?></a><?php
 		break;
 	case 1:
 		// _blank
-?><a <?php echo $attributes; ?><?php echo $class; ?>href="<?php echo $flink; ?>" target="_blank" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
+?><a href="<?php echo $flink; ?>" target="_blank" <?php echo $title; ?> class="<?php echo $class; ?>" <?php echo $attributes; ?>><?php echo $linktype; ?></a><?php
 		break;
 	case 2:
 		// Use JavaScript "window.open"
 		$options = 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,' . $params->get('window_open');
-			?><a <?php echo $attributes; ?><?php echo $class; ?>href="<?php echo $flink; ?>" onclick="window.open(this.href,'targetWindow','<?php echo $options;?>');return false;" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
+			?><a href="<?php echo $flink; ?>" onclick="window.open(this.href,'targetWindow','<?php echo $options;?>');return false;" class="<?php echo $class; ?>" <?php echo $title; ?> <?php echo $attributes; ?>><?php echo $linktype; ?></a><?php
 		break;
 endswitch;

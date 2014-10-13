@@ -10,23 +10,8 @@
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
-$itemAttributes = array();
-$itemAttributes['class'] = $item->anchor_css ? $item->anchor_css : null;
-$itemAttributes['title'] = $item->anchor_title ? $item->anchor_title : null;
-
-// Convert attributes to string
-$attributes = '';
-
-if (!empty($itemAttributes))
-{
-	foreach ($itemAttributes as $attribute => $value)
-	{
-		if (null !== $value)
-		{
-			$attributes .= ' ' . $attribute . '="' . trim((string) $value) . '"';
-		}
-	}
-}
+$class = $item->anchor_css ? $item->anchor_css : '';
+$title = $item->anchor_title ? 'title="' . $item->anchor_title . '" ' : '';
 
 if ($item->menu_image)
 {
@@ -43,22 +28,25 @@ else
 if ($item->isParentAnchor)
 {
 	$linktype .= ' <span class="caret"></span>';
-	if ($attributes == '') $attributes = 'class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" ';
+	$class .= 'dropdown-toggle';
+	$attributes = 'data-toggle="dropdown" data-hover="dropdown"';
 }
+
+$flink = $item->flink;
 
 switch ($item->browserNav)
 {
 	default:
 	case 0:
-?><a <?php echo $attributes; ?>href="<?php echo $item->flink; ?>" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
+?><a href="<?php echo $flink; ?>" <?php echo $title; ?> class="<?php echo $class; ?>" <?php echo $attributes; ?>><?php echo $linktype; ?></a><?php
 		break;
 	case 1:
 		// _blank
-?><a <?php echo $attributes; ?>href="<?php echo $item->flink; ?>" target="_blank" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
+?><a href="<?php echo $flink; ?>" target="_blank" <?php echo $title; ?> class="<?php echo $class; ?>" <?php echo $attributes; ?>><?php echo $linktype; ?></a><?php
 		break;
 	case 2:
-	// Use JavaScript "window.open"
-?><a <?php echo $attributes; ?>href="<?php echo $item->flink; ?>" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes');return false;" <?php echo $title; ?>><?php echo $linktype; ?></a>
-<?php
+		// Use JavaScript "window.open"
+		$options = 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,' . $params->get('window_open');
+			?><a href="<?php echo $flink; ?>" onclick="window.open(this.href,'targetWindow','<?php echo $options;?>');return false;" class="<?php echo $class; ?>" <?php echo $title; ?> <?php echo $attributes; ?>><?php echo $linktype; ?></a><?php
 		break;
 }

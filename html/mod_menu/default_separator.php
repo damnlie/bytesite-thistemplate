@@ -11,6 +11,7 @@ defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
 $title = $item->anchor_title ? ' title="' . $item->anchor_title . '" ' : '';
+
 if ($item->menu_image)
 	{
 		$item->params->get('menu_text', 1) ?
