@@ -1,136 +1,144 @@
 // Browser width specific .col-centered
 .col-xs-centered {
   @media (max-width: @screen-xs-max) {
-    float: none;
-    margin: 0 auto;
+	float: none;
+	margin: 0 auto;
   }
 }
 .col-sm-centered {
   @media (max-width: @screen-sm-max) {
-    float: none;
-    margin: 0 auto;
+	float: none;
+	margin: 0 auto;
   }
 }
 .col-md-centered {
   @media (max-width: @screen-md-max) {
-    float: none;
-    margin: 0 auto;
+	float: none;
+	margin: 0 auto;
   }
 }
 .col-lg-centered {
   @media (min-width: @screen-lg-min) {
-    float: none;
-    margin: 0 auto;
+	float: none;
+	margin: 0 auto;
   }
 }
 .col-centered {
-    float: none;
-    margin: 0 auto;
+	float: none;
+	margin: 0 auto;
 }
 
 // Browser width specific .text-center
 .text-xs-center {
   @media (max-width: @screen-xs-max) {
-    text-align: center;
+	text-align: center;
   }
 }
 .text-sm-center {
   @media (max-width: @screen-sm-max) {
-    text-align: center;
+	text-align: center;
   }
 }
 .text-md-center {
   @media (max-width: @screen-md-max) {
-    text-align: center;
+	text-align: center;
   }
 }
 .text-lg-center {
   @media (min-width: @screen-lg-min) {
-    text-align: center;
+	text-align: center;
   }
 }
 
 // Padding
 .padding-both {
-    padding-top:@default-unit;
-    padding-bottom:@default-unit;
+	padding-top:@default-unit;
+	padding-bottom:@default-unit;
 }
-    .padding-both-05x {
-        padding-top:0.5*@default-unit;
-        padding-bottom:0.5*@default-unit;
-    }
-    .padding-both-2x {
-        padding-top:2*@default-unit;
-        padding-bottom:2*@default-unit;
-    }
-    .padding-both-3x {
-        padding-top:3*@default-unit;
-        padding-bottom:3*@default-unit;
-    }
-    .padding-both-4x {
-        padding-top:4*@default-unit;
-        padding-bottom:4*@default-unit;
-    }
-    .padding-both-5x {
-        padding-top:5*@default-unit;
-        padding-bottom:5*@default-unit;
-    }
+	.padding-both-05x {
+		padding-top:0.5*@default-unit;
+		padding-bottom:0.5*@default-unit;
+	}
+	.padding-both-2x {
+		padding-top:2*@default-unit;
+		padding-bottom:2*@default-unit;
+	}
+	.padding-both-3x {
+		padding-top:3*@default-unit;
+		padding-bottom:3*@default-unit;
+	}
+	.padding-both-4x {
+		padding-top:4*@default-unit;
+		padding-bottom:4*@default-unit;
+	}
+	.padding-both-5x {
+		padding-top:5*@default-unit;
+		padding-bottom:5*@default-unit;
+	}
 .padding-top {
-    padding-top:@default-unit;
+	padding-top:@default-unit;
 }
-    .padding-top-05x {
-        padding-top:0.5*@default-unit;
-    }
-    .padding-top-2x {
-        padding-top:2*@default-unit;
-    }
-    .padding-top-3x {
-        padding-top:3*@default-unit;
-    }
-    .padding-top-4x {
-        padding-top:4*@default-unit;
-    }
-    .padding-top-5x {
-        padding-top:5*@default-unit;
-    }
+	.padding-top-05x {
+		padding-top:0.5*@default-unit;
+	}
+	.padding-top-2x {
+		padding-top:2*@default-unit;
+	}
+	.padding-top-3x {
+		padding-top:3*@default-unit;
+	}
+	.padding-top-4x {
+		padding-top:4*@default-unit;
+	}
+	.padding-top-5x {
+		padding-top:5*@default-unit;
+	}
 .padding-bottom {
-    padding-bottom:@default-unit;
+	padding-bottom:@default-unit;
 }
-    .padding-bottom-05x {
-        padding-bottom:0.5*@default-unit;
-    }
-    .padding-bottom-2x {
-        padding-bottom:2*@default-unit;
-    }
-    .padding-bottom-3x {
-        padding-bottom:3*@default-unit;
-    }
-    .padding-bottom-4x {
-        padding-bottom:4*@default-unit;
-    }
-    .padding-bottom-5x {
-        padding-bottom:5*@default-unit;
-    }
+	.padding-bottom-05x {
+		padding-bottom:0.5*@default-unit;
+	}
+	.padding-bottom-2x {
+		padding-bottom:2*@default-unit;
+	}
+	.padding-bottom-3x {
+		padding-bottom:3*@default-unit;
+	}
+	.padding-bottom-4x {
+		padding-bottom:4*@default-unit;
+	}
+	.padding-bottom-5x {
+		padding-bottom:5*@default-unit;
+	}
 
 .margin-right {
-    margin-right:@default-unit;
+	margin-right:@default-unit;
 }
-    .margin-right-05x {
-        margin-right:0.5*@default-unit;
-    }
+	.margin-right-05x {
+		margin-right:0.5*@default-unit;
+	}
 
 .logo {
-    img {
-        max-width:100%;
-    }
-    &.navbar-brand {
-        width:100px;
-    }
+	img {
+		max-width:100%;
+	}
+	&.navbar-brand {
+		width:100px;
+	}
 }
 
 .bg-byte-lighter-xx {
-    background-color: @color-byte-lighter-xx;
+	background-color: @color-byte-lighter-xx;
 }
 
 //Font-Awesome
-@fa-li-width:         (30rem / 14);
+@fa-li-width:		 (30rem / 14);
+
+main {
+	&.content-wrapper {
+		@media (min-width: @grid-float-breakpoint) {
+			margin-top:3.5*@default-unit;
+		}
+	}
+}

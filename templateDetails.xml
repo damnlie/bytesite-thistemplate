@@ -32,6 +32,7 @@
     <positions>
         <position>header</position>
         <position>nav</position>
+        <position>search</position>
         <position>top</position>
         <position>breadcrumbs</position>
         <position>main-top</position>

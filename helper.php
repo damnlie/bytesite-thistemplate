@@ -50,7 +50,7 @@ if ($this->params->get('svginjection',0))
 }
 
 // Load Bootstrap Hover on Dropdown
-// https://github.com/CWSpear/bootstrap-hover-dropdown/blob/master/bootstrap-hover-dropdown.min.js
+// https://github.com/CWSpear/bootstrap-hover-dropdown/
 if ($this->params->get('dropdownHover',1))
 {
     $helper->getDropdownHover($this);
