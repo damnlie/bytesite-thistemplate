@@ -249,4 +249,13 @@ class ThisTemplateHelper
 
         $doc->addScript($templateUrl.'/js/svg-injector/svg-injector.min.js');
     }
+
+    public function getDropdownHover($template)
+    {
+        // Determine the variables
+        $doc                = $this->getDocument();
+        $templateUrl        = 'templates/'.$template->template;
+
+        $doc->addScript($templateUrl.'/js/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js');
+    }
 }

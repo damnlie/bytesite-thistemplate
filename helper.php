@@ -44,15 +44,17 @@ $analyticsData = $helper->getAnalytics($this);
 $logo = $helper->getLogo($this);
 
 // Load SVG Injection
-if ($this->params->get('svginjection'))
+if ($this->params->get('svginjection',0))
 {
     $helper->getSVGInjector($this);
 }
 
-
-
-
-
+// Load Bootstrap Hover on Dropdown
+// https://github.com/CWSpear/bootstrap-hover-dropdown/blob/master/bootstrap-hover-dropdown.min.js
+if ($this->params->get('dropdownHover',1))
+{
+    $helper->getDropdownHover($this);
+}
 
 // Determine home
 if($helper->isHome()) { 
