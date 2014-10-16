@@ -1,0 +1,40 @@
+//
+// Typography
+// --------------------------------------------------
+
+// Headings
+// -------------------------
+h0, .h0 { font-size: @font-size-h0;}
+h1, .h1 {  }
+h2, .h2 { font-weight:300; }
+h3, .h3 { color: @color-byte-dark;font-weight:300; }
+h4, .h4 { color: @color-byte-darker-x; }
+h5, .h5 {  }
+h6, .h6 {  }
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: 3*@line-height-computed;
+  margin-bottom: 3*(@line-height-computed / 2);
+}
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 3*(@line-height-computed / 2);
+  margin-bottom: 3*(@line-height-computed / 2);
+}
+
+// Transformation
+.smallcaps {
+	font-variant: small-caps !important;  
+	text-rendering: auto;
+}
+
+.lightweight {
+	font-weight: 300;
+}
+
+.font-large {
+	font-size:@font-size-large;
+}

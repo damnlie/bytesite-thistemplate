@@ -23,12 +23,12 @@ jQuery(function($) {
 	$(document).on("scroll", function(){
 		if($(document).scrollTop() > 100){
 			$("header").addClass("shrink");
-			updateSliderMargin();
+			//updateSliderMargin();
 		}
 		else
 		{
 			$("header").removeClass("shrink");
-			updateSliderMargin();
+			//updateSliderMargin();
 		}
 	});
 });
