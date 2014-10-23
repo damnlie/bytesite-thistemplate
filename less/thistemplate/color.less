@@ -7,6 +7,7 @@
 @color-grapefruit-darker:	rgba(213,66,66,1);
 
 // byte
+@color-byte-lighter-xxx:	rgba(237,248,252,1);
 @color-byte-lighter-xx:		rgba(220,242,250,1);
 @color-byte-lighter-x:		rgba(185,230,245,1);
 @color-byte-lighter:		rgba(115,205,234,1);
@@ -45,6 +46,16 @@
 @gray-light:				lighten(#000, 46.7%); // #777
 @gray-lighter:				lighten(#000, 50%);	// #808080
 
+@brand-primary:				#428bca;
+@brand-success:				@color-lime-dark;
+@brand-info:				#5bc0de;
+@brand-warning:				#f0ad4e;
+@brand-danger:				#d9534f;
+
+//== Scaffolding
+//
+@text-color:				@color-byte-darker-x;
+
 // Grapefruit
 .color-grapefruit-lighter	{color:@color-grapefruit-lighter;}
 .color-grapefruit-light		{color:@color-grapefruit-light;}
@@ -52,6 +63,7 @@
 .color-grapefruit-dark		{color:@color-grapefruit-dark;}
 .color-grapefruit-darker	{color:@color-grapefruit-darker;}
 // byte
+.color-byte-lighter-xxx		{color:@color-byte-lighter-xxx;}
 .color-byte-lighter-xx		{color:@color-byte-lighter-xx;}
 .color-byte-lighter-x		{color:@color-byte-lighter-x;}
 .color-byte-lighter			{color:@color-byte-lighter;}
@@ -86,7 +98,7 @@
 .gray-light					{color:@gray-light;}
 .gray-lighter				{color:@gray-lighter;}
 
-
+.color-white				{color:white;}
 .bg-white					{background-color:white;}
 // Grapefruit
 .bg-grapefruit-lighter		{background-color:@color-grapefruit-lighter;}
@@ -95,6 +107,7 @@
 .bg-grapefruit-dark			{background-color:@color-grapefruit-dark;}
 .bg-grapefruit-darker		{background-color:@color-grapefruit-darker;}
 // byte
+.bg-byte-lighter-xxx		{background-color:@color-byte-lighter-xxx;}
 .bg-byte-lighter-xx			{background-color:@color-byte-lighter-xx;}
 .bg-byte-lighter-x			{background-color:@color-byte-lighter-x;}
 .bg-byte-lighter			{background-color:@color-byte-lighter;}
@@ -122,10 +135,4 @@
 .bg-lemon					{background-color:@color-lemon;}
 .bg-lemon-dark				{background-color:@color-lemon-dark;}
 .bg-lemon-darker			{background-color:@color-lemon-darker;}
-
-@brand-primary:				#428bca;
-@brand-success:				@color-lime-dark;
-@brand-info:				#5bc0de;
-@brand-warning:				#f0ad4e;
-@brand-danger:				#d9534f;
 

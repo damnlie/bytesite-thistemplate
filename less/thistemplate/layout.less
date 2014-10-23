@@ -1,45 +1,6 @@
-html,body {
-	font-size:@font-size-root;
-}
-
-.onethird {
-	width: 33%;
-}
-
-.bg-byte {
-	h1,
-	h2,
-	h3,
-	p {
-		color:white;
-	}
-	&.masthead {
-		h1 + p {
-			color: @color-byte-darker-x;
-			font-size: @font-size-h4;
-			font-weight:@headings-font-weight;
-		}
-	}
-}
-
-footer {
-	.footer-nav {
-		color: @color-byte-darker-x;
-		background-color: @color-byte-lighter-xx;
-		a {
-			color: @color-byte-darker-x;
-			text-decoration: underline;
-		}
-		h3,
-		.h3 {
-			color: @color-byte-darker-x;
-		}
-	}
-	.footer-copyright {
-		color: @gray;
-		a {
-			color: @gray;
-			text-decoration: underline;
-		}
-	}
-}
+// Layouts
+// --------------------------------------------------
+@import "layout/page";
+@import "layout/header";
+@import "layout/content";
+@import "layout/footer";

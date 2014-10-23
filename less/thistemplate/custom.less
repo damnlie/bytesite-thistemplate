@@ -55,23 +55,27 @@
 	padding-top:@default-unit;
 	padding-bottom:@default-unit;
 }
-	.padding-both-05x {
+	.padding-both-05x { // 10px
 		padding-top:0.5*@default-unit;
 		padding-bottom:0.5*@default-unit;
 	}
-	.padding-both-2x {
+	.padding-both-15x { // 30px
+		padding-top:1.5*@default-unit;
+		padding-bottom:1.5*@default-unit;
+	}
+	.padding-both-2x { // 40px
 		padding-top:2*@default-unit;
 		padding-bottom:2*@default-unit;
 	}
-	.padding-both-3x {
+	.padding-both-3x { // 60px
 		padding-top:3*@default-unit;
 		padding-bottom:3*@default-unit;
 	}
-	.padding-both-4x {
+	.padding-both-4x { // 80px
 		padding-top:4*@default-unit;
 		padding-bottom:4*@default-unit;
 	}
-	.padding-both-5x {
+	.padding-both-5x { // 100px
 		padding-top:5*@default-unit;
 		padding-bottom:5*@default-unit;
 	}
@@ -93,6 +97,7 @@
 	.padding-top-5x {
 		padding-top:5*@default-unit;
 	}
+
 .padding-bottom {
 	padding-bottom:@default-unit;
 }
@@ -125,26 +130,40 @@
 		margin-left:0.5*@default-unit;
 	}
 
-.logo {
-	img {
-		max-width:100%;
-	}
-	&.navbar-brand {
-		width:100px;
+.no-margin {
+	margin:0;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+a {
+	&.btn,
+	header & {
+		text-decoration: none;
 	}
 }
 
-.bg-byte-lighter-xx {
-	background-color: @color-byte-lighter-xx;
-}
-
-//Font-Awesome
-@fa-li-width:		 (30rem / 14);
-
-main {
-	&.content-wrapper {
-		@media (min-width: @grid-float-breakpoint) {
-			margin-top:3.5*@default-unit;
+.overview-hero {
+	min-height: 460px;
+	overflow: hidden;
+	position: relative;
+	.overview-hero-media {
+		position: absolute;
+		bottom: 0;
+		top:2*@default-unit;
+		&.overview-hero-media-left {
+			right: 0;
 		}
+		&.overview-hero-media-right {
+			left: 50%;
+		}
+	}
+}
+
+.rwd-break {
+	@media (max-width: @grid-float-breakpoint) {
+		display: none;
 	}
 }

@@ -1,5 +1,15 @@
 .panel-table {
 	background-color: @panel-table-heading-bg;
 	border-color: @panel-table-border;
-	border-width: @table-border-width;
+	border-width: 2*@table-border-width;
+	p:last-child {
+		margin:0;
+	}
+}
+
+.panel-shadow {
+	box-shadow: 0 0 @default-unit rgba(0,64,103,0.2);
+	> table {
+		border-collapse: inherit;
+	}
 }

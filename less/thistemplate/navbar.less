@@ -1,11 +1,18 @@
 /*
  * Shadow effects
  */
-.navbar-shadow
-{
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+.navbar-shadow {
+	box-shadow: 0 1px @default-unit rgba(0,64,103,0.2)
 }
+
+.navbar-brand {
+	padding:25px @navbar-padding-horizontal;
+}
+
 .navbar-default {
+	.navbar-brand {
+		.transition(all 400ms ease-in-out);
+	}
 	.navbar-nav {
 		> li {
 			> a {
@@ -14,6 +21,13 @@
 		}
 	}
 	&.shrink {
+		.navbar-brand {
+			@media (min-width: @grid-float-breakpoint) {
+				padding-top:0.5*@default-unit;
+				padding-bottom:0.5*@default-unit;
+				height:50/80*@navbar-height;
+			}
+		}
 		.navbar-nav {
 			> li {
 				> a {
@@ -24,13 +38,16 @@
 				}
 			}
 		}
+		&.navbar {
+			min-height:50/80*@navbar-height;
+		}
 	}
 }
-
 
 .dropdown-menu {
 	top: 95%;
 }
+
 .dropdown-submenu {
 	> .dropdown-menu {
 		top: 0;

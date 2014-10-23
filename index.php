@@ -53,7 +53,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/helper.php';
 
 	<footer id="footer" class="footer-wrapper">
 		<?php if ($this->countModules('contact')): ?>
-		<section class="footer-contact padding-top-3x">
+		<section class="footer-contact padding-top-4x">
 			<div class="container">
 				<jdoc:include type="modules" name="contact" style="none" />
 			</div>
@@ -61,7 +61,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/helper.php';
 		<?php endif; ?>
 
 		<?php if ($this->countModules('footer')): ?>
-		<section class="footer-nav padding-both-4x">
+		<section class="footer-nav padding-both-2x">
 			<div class="container">
 				<jdoc:include type="modules" name="footer" style="none" />
 			</div>

@@ -5,17 +5,36 @@
 // Bootstrap
 @icon-font-path:						"../fonts/bootstrap/";
 @fa-font-path:							"../fonts/font-awesome/";
+@fa-li-width:							(30rem / 14);
 
 // default 
 @default-unit:							20px;
 
 @headings-color:						@color-byte-dark;
-@font-size-root:						14px;
-@font-size-h0:							72px;
+
+//== Typography
+//
+@font-size-base:						14px;
+
+@font-size-h0:							64px;
+@font-size-h1:							48px;
+@font-size-h2:							32px;
+@font-size-h3:							24px;
+@font-size-h4:							21px;
+@font-size-h5:							18px;
+@font-size-h6:							16px;
+
 
 @font-family-sans-serif:				'Open Sans', sans-serif;
-
 @input-border:							@gray-lighter;
+
+@line-height-base:						1.5;
+
+@headings-font-weight:					300;
+
+//== Navbar
+//
+@navbar-height:							4*@default-unit;
 
 // Navbar-default
 @navbar-default-color:					@color-byte-dark;
@@ -37,15 +56,41 @@
 @navbar-default-toggle-border-color:	@color-byte-dark;
 
 //== Buttons
+@btn-font-size-base:					@font-size-base;
+@btn-font-size-large:					@font-size-large;
+@btn-font-size-small:					@font-size-small;
+@btn-border-width:						2px;
 @btn-success-bg-hover:					@color-lime-darker;
 @btn-success-border:					white;
 
+//== Forms
+//
+@input-border-width:					2px;
+@input-border:							@gray-lighter;
+
+//== Components
+//
+@padding-base-vertical:					14px;
+@padding-base-horizontal:				23px;
+
+@padding-small-vertical:				9px;
+@padding-small-horizontal:				18px;
+
+@border-radius-base:					6px;
+@border-radius-large:					10px;
+@border-radius-small:					6px;
+
 //== Tables
 @table-border-color:					white;
-@table-border-width:					2px;
+@table-border-width:					1px;
 @table-radius-size:						@border-radius-small;
 
 //== Panels
 @panel-table-text:						inherit;
 @panel-table-border:					white;
 @panel-table-heading-bg:				transparent;
+
+//== Media queries breakpoints
+//
+@screen-lg:								@screen-md;
+@container-lg:							@container-md;
