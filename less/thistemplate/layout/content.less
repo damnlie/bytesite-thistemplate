@@ -1,0 +1,32 @@
+.bg-byte {
+	h0,.h0,
+	h1,.h1,
+	h2,.h2,
+	h3,.h3,
+	h4,.h4,
+	h5,.h5,
+	h6,.h6 {
+		color:white;
+	}
+	p {
+		color:@color-byte-darker-x;
+		&.color-white {
+			color:white;
+		}
+	}
+	a {
+		color:white;
+		&:hover,
+		&:active,
+		&:focus {
+			color:white;
+		}
+	}
+	&.masthead {
+		h1 + p {
+			color: @color-byte-darker-x;
+			font-size: @font-size-h5;
+			font-weight:@headings-font-weight;
+		}
+	}
+}
