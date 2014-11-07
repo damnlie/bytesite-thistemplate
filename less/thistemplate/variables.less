@@ -4,8 +4,6 @@
 
 // Bootstrap
 @icon-font-path:						"../fonts/bootstrap/";
-@fa-font-path:							"../fonts/font-awesome/";
-@fa-li-width:							(30rem / 14);
 
 // default 
 @default-unit:							20px;
@@ -65,16 +63,19 @@
 
 //== Forms
 //
-@input-border-width:					2px;
+@input-border-width:					1px;
 @input-border:							@gray-lighter;
 
 //== Components
 //
-@padding-base-vertical:					14px;
-@padding-base-horizontal:				23px;
+@padding-base-vertical:					9px;
+@padding-base-horizontal:				18px;
 
-@padding-small-vertical:				9px;
-@padding-small-horizontal:				18px;
+@padding-large-vertical:				14px;
+@padding-large-horizontal:				23px;
+
+@padding-small-vertical:				@padding-base-vertical;
+@padding-small-horizontal:				@padding-base-horizontal;
 
 @border-radius-base:					6px;
 @border-radius-large:					10px;
@@ -86,11 +87,28 @@
 @table-radius-size:						@border-radius-small;
 
 //== Panels
+@panel-default-border:					@gray-lighter;
+@panel-default-text:					@color-byte-dark;
+@panel-default-heading-bg:				transparent;
+
 @panel-table-text:						inherit;
 @panel-table-border:					white;
 @panel-table-heading-bg:				transparent;
+@panel-block-border:					transparent;
+@panel-block-text:						@color-byte-dark;
+@panel-block-title:						@color-byte-dark;
+@panel-block-heading-bg:				transparent;
+@panel-block-default-border:			transparent;
+@panel-block-default-text:				@color-byte-dark;
+@panel-block-default-title:				@color-byte-dark;
+@panel-block-default-heading-bg:		@color-byte-darker-x;
 
 //== Media queries breakpoints
 //
 @screen-lg:								@screen-md;
 @container-lg:							@container-md;
+
+//== Tables
+//
+@table-bg-accent:						@color-byte-lighter-xx;
+

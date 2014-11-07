@@ -1,15 +1,131 @@
 .panel-table {
-	background-color: @panel-table-heading-bg;
-	border-color: @panel-table-border;
-	border-width: 2*@table-border-width;
+	background-color:@panel-table-heading-bg;
+	border-color:@panel-table-border;
+	border-width:2*@table-border-width;
 	p:last-child {
 		margin:0;
 	}
 }
 
 .panel-shadow {
-	box-shadow: 0 0 @default-unit rgba(0,64,103,0.2);
+	box-shadow:0 0 @default-unit rgba(0,64,103,0.2);
 	> table {
-		border-collapse: inherit;
+		border-collapse:inherit;
+	}
+}
+
+.panel-padding-15x {
+	.panel-body {
+		padding:1.5*@default-unit;
+	}
+}
+
+
+.panel-striped {
+	> div {
+		background-color:white;
+	}
+	> div:nth-child(odd) {
+		background-color:@table-bg-accent;
+	}
+}
+
+.panel-block {
+	.panel-variant(@panel-block-border; @panel-block-text; @panel-block-heading-bg; @panel-block-border);
+}
+.panel-block-default {
+	.panel-variant(@panel-block-default-border; @panel-block-default-text; @panel-block-default-heading-bg; @panel-block-default-border);
+	border:0;
+	border-radius:0;
+	> .panel-heading {
+		border-radius:0;
+		.h3 {
+			margin:0;
+			padding:0.5*@default-unit;
+		}
+		.h3 + .h4 {
+			margin:0;
+			padding:0.5*@default-unit;
+		}
+	}
+}
+
+.panel-icon {
+	&.fa {
+		display:block;
+		float:left;
+		margin-left:0.5*@default-unit;
+		margin-right:@default-unit;
+	}
+}
+
+.panel-default {
+	> .panel-heading {
+		&.h2 {
+			margin:0;
+			padding:@default-unit;
+		}
+	}
+}
+
+// Collapsable panels (aka, accordion)
+//
+// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// the help of our collapse JavaScript plugin.
+
+.panel-group {
+	&.panel-group-block {	
+		margin-bottom:@line-height-computed;
+
+		.panel-group-heading {
+			background-color:@color-byte-darker-x;
+			.h3 {
+				margin:0;
+				color:@color-byte-lighter-xx;
+			}
+		}
+
+		// Tighten up margin so it's only between panels
+		.panel {
+			margin-bottom:0;
+			border-radius:0;
+			+ .panel {
+				margin-top:0;
+			}
+			&.active {
+				.panel-heading {
+					background-color:@color-lemon-dark;
+				}
+			}
+		}
+
+		.panel-heading {
+			border-bottom:0;
+			border-radius:0;
+			.transition(background-color .2s ease-in-out);
+			.panel-title {
+				a {
+					color:@color-byte-darker-x;
+					text-decoration:none;
+				}
+			}
+			+ .panel-collapse > .panel-body {
+				border:0;
+			}
+		}
+
+		.panel-body {
+			background-color:white;
+			dt {
+				color:@color-byte-darker;
+			}
+		}
+
+		.panel-footer {
+			border-top:0;
+			+ .panel-collapse .panel-body {
+				border:0;
+			}
+		}
 	}
 }

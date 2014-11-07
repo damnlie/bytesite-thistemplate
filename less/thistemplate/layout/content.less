@@ -7,6 +7,9 @@
 	h5,.h5,
 	h6,.h6 {
 		color:white;
+		&.color-byte-darker-x {
+			color:@color-byte-darker-x;
+		}
 	}
 	p {
 		color:@color-byte-darker-x;
@@ -27,6 +30,21 @@
 			color: @color-byte-darker-x;
 			font-size: @font-size-h5;
 			font-weight:@headings-font-weight;
+		}
+	}
+}
+
+main {
+	header {
+		&.page-header {
+			background-color:@color-byte;
+			border:none;
+			margin:0;
+			padding:0;
+			h1,.h1 {
+				color:white;
+				margin-bottom: 1.5*@font-size-h1;
+			}
 		}
 	}
 }

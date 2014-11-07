@@ -5,12 +5,12 @@
 // Headings
 // -------------------------
 h0, .h0 { font-size: @font-size-h0; }
-h1, .h1 {  }
+h1, .h1 {	}
 h2, .h2 { }
 h3, .h3 { color: @color-byte-dark; }
 h4, .h4 { color: @color-byte-darker-x; }
-h5, .h5 {  }
-h6, .h6 {  }
+h5, .h5 {	}
+h6, .h6 {	}
 
 h1, .h1 {
 	margin-top: 1.5*@font-size-h1;
@@ -39,7 +39,7 @@ h6, .h6 {
 
 // Transformation
 .smallcaps {
-	font-variant: small-caps !important;  
+	font-variant: small-caps !important;
 	text-rendering: auto;
 }
 
@@ -49,4 +49,23 @@ h6, .h6 {
 
 .font-large {
 	font-size:@font-size-large;
+}
+
+// Horizontal description lists
+//
+// Defaults to being stacked without any of the below styles applied, until the
+// grid breakpoint is reached (default of ~768px).
+
+.dl-horizontal {
+	&.dl-wide {
+		@media (min-width: @grid-float-breakpoint) {
+			dt {
+				font-weight:400;
+				width: (1.5*@dl-horizontal-offset - 20);
+			}
+			dd {
+				margin-left: 1.5*@dl-horizontal-offset;
+			}
+		}
+	}
 }

@@ -64,7 +64,7 @@ if($helper->isHome()) {
 }
 
 // Add scripts
-$doc->addScript($template.'/js/application.js');
+$doc->addScript($template.'/js/application.js', 'text/javascript', true, true);
 if($browser->getBrowser() == 'msie' && $browser->getMajor() < 9 ) {
     $stylelink = '<!--[if lt IE 9]>' ."\n";
     $stylelink .= '<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>' ."\n";
@@ -72,37 +72,37 @@ if($browser->getBrowser() == 'msie' && $browser->getMajor() < 9 ) {
     $doc->addCustomTag($stylelink);
 }
 
-// Determine whether to show sidebar-A (@todo: Jisse, clean up this mess)
-$SidebarA = false;
-if ($this->countModules('left')) $SidebarA = true;
-if (!empty($active) && $active->home == true) $SidebarA = false;
-
-
 // Check upon the current page layout
 $pagelayout = $this->params->get('pagelayout', '1column');
-if($SidebarA == true) $pagelayout = '2column-left';
 
+// Determine whether to show sidebar-A (@todo: Jisse, clean up this mess)
+$SidebarA = false;
+$SidebarB = false;
 
-// Width calculations
-$span = '';
-
-if ($this->countModules('left') && $this->countModules('right'))
-{
-	$span = ($grid - ( $gridSidebar + $gridSidebar ));
-}
-elseif ($this->countModules('left') && !$this->countModules('right'))
-{
-	$span = ($grid - $gridSidebar - $gridSidebarOffset);
-	$offset = $gridSidebarOffset;
-
-}
-elseif (!$this->countModules('left') && $this->countModules('right'))
-{
-	$span = ($grid - $gridSidebar - $gridSidebarOffset);
-	$offset = $gridSidebarOffset;
-}
-else
-{
-	$span = $grid;
+if ($this->countModules('sidebar-a')) {
+	$SidebarA = true;
 }
 
+if ($this->countModules('sidebar-b')) {
+	$SidebarB = true;
+}
+
+if (!empty($active) && $active->home == true) {
+	$SidebarA = false;
+	$SidebarB = false;
+}
+
+if($SidebarA == true) {
+	$pagelayout = '2column-left';
+	
+}
+
+if($SidebarB == true) {
+	$pagelayout = '2column-right';
+	
+}
+
+if($SidebarA == true && $SidebarB == true) {
+	$pagelayout = '3column';
+	
+}

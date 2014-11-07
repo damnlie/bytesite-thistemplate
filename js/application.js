@@ -31,4 +31,23 @@ jQuery(function($) {
 			//updateSliderMargin();
 		}
 	});
+
+	// toggle active state to panel-heading in accordion
+	$('.panel').on('show.bs.collapse', function () {
+		$(this).addClass('active');
+	});
+
+	$('.panel').on('hide.bs.collapse', function () {
+		$(this).removeClass('active');
+	});
+	
+	function toggleChevron(e) {
+		$(e.target)
+			.prev('.panel-heading')
+			.find("i.indicator")
+			.toggleClass('fa-chevron-down fa-chevron-up');
+	}
+	$('#accordion').on('hidden.bs.collapse', toggleChevron);
+	$('#accordion').on('shown.bs.collapse', toggleChevron);
+	
 });
