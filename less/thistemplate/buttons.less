@@ -164,3 +164,50 @@ input[type="button"] {
 	&.btn-sm {.button-size(@padding-small-vertical; 2*@padding-small-horizontal; @btn-font-size-small; @line-height-small; @border-radius-small);}
 	&.btn-xs {.button-size(@padding-xs-vertical; 2*@padding-xs-horizontal; @btn-font-size-small; @line-height-small; @border-radius-small);}
 }
+
+// Klantreferenties button
+.btn-clean {
+	background-image: none;
+	background-color: transparent;
+}
+.btn-flat {
+	text-shadow: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+.btn-minusmargin {
+	margin-top:-@default-unit;
+}
+
+.btn-reference {
+	border-color:@input-border;
+	position: relative;
+	overflow: hidden;
+	&.btn {
+		border-width:1px;
+	}
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+	}
+	&:active,
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+	> div {
+		background-color: @color-byte;
+		color: white;
+		height:@default-unit;
+		position: absolute;
+		bottom:-@default-unit;
+		left:0;
+		width:100%;
+		opacity: 1;
+		transition: all 0.5s ease-out;
+	}
+	&:hover > div {
+		bottom:0;
+	}
+}

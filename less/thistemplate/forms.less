@@ -252,6 +252,9 @@ input[type="month"] {
 input[type="radio"] + label {
 	margin-left: 0.5*@default-unit;
 }
+input[type="radio"].radio-inline + label {
+	display: inline;
+}
 // Apply same disabled cursor tweak as for inputs
 // Some special care is needed because <label>s don't inherit their parent's `cursor`.
 //
@@ -538,6 +541,14 @@ input[type="checkbox"] {
 		}
 		.form-control {
 			&:extend(.input-sm);
+		}
+	}
+	
+	@media (min-width: @screen-sm-min) {
+		.inline {
+			> label {
+				display:inline;
+			}
 		}
 	}
 }

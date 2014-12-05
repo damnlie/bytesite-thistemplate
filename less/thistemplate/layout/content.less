@@ -35,6 +35,12 @@
 }
 
 main {
+	&.content-wrapper {
+		@media (min-width: @grid-float-breakpoint) {
+			margin-top:4*@default-unit;
+		}
+	}
+
 	header {
 		&.page-header {
 			background-color:@color-byte;
@@ -45,6 +51,104 @@ main {
 				color:white;
 				margin-bottom: 1.5*@font-size-h1;
 			}
+		}
+	}
+
+	/* Klantervaringen & Partnerervaringen */
+	.blog {
+		.bubble {
+			position: relative;
+			width: 100%;
+			padding:@default-unit;
+			background-color:@color-byte;
+			&:after {
+				content: '';
+				position: absolute;
+				border-style: solid;
+				border-width: 0 @default-unit @default-unit 0;
+				border-color: transparent @color-byte;
+				display: block;
+				width: 0;
+				z-index: 1;
+				left: -1*@default-unit;
+				top: @default-unit;
+				@media (max-width: @grid-float-breakpoint) {
+					border-width: @default-unit @default-unit 0;
+					border-color: @color-byte transparent;
+					bottom: -15px;
+					left: @default-unit;
+					top:100%;
+				}
+			}
+			p {
+				margin:0;
+			}
+		}
+		@media (max-width: @grid-float-breakpoint) {
+			.item > div:first-of-type {
+				margin-bottom:@default-unit;
+			}
+		}
+		.row-0,
+		.row-2,
+		.row-4,
+		.row-6,
+		.row-8,
+		.row-10 {
+			.col-sm-pull-9 {
+				right: 0;
+			}
+			.col-sm-push-3 {
+				left: 0;
+			}
+			.bubble:after {
+				border-width: 0 0 @default-unit @default-unit;
+				border-color: transparent @color-byte;
+				right: -1*@default-unit;
+				left:100%; // to override left:-15px;
+				@media (max-width: @grid-float-breakpoint) {
+					border-width: @default-unit @default-unit 0;
+					border-color: @color-byte transparent;
+					bottom: -15px;
+					left: @default-unit;
+					top:100%;
+				}
+			}
+		}
+		&.items-row-padding-top {
+			.items-row {
+				padding-top:@default-unit;
+			}
+		}
+		&.items-row-padding-bottom {
+			.items-row {
+				padding-bottom:@default-unit;
+			}
+		}
+		&.items-row-padding-both {
+			.items-row {
+				padding-top:@default-unit;
+				padding-bottom:@default-unit;
+			}
+		}
+	}
+	.partner {
+		.modal {
+			.dl-horizontal {
+				@media (min-width: @grid-float-breakpoint) {
+					dd {
+						margin-left: 199px;
+					}
+				}
+			}
+		}
+	}
+	// Homepage
+	// WP Posts
+	.wpposts {
+		.wppost-img {
+			height:230px;
+			overflow: hidden;
 		}
 	}
 }

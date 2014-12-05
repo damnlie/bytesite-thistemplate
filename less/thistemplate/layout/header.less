@@ -1,7 +1,17 @@
-main {
-	&.content-wrapper {
-		@media (min-width: @grid-float-breakpoint) {
-			margin-top:4*@default-unit;
+.navbar-default {
+	.module {
+		&.module-search {
+			.transition(all 400ms ease-in-out);
+			margin-top:@navbar-padding-vertical;
+		}
+	}
+	&.shrink {
+		.module {
+			&.module-search {
+				@media (min-width: @grid-float-breakpoint) {
+					margin-top:0.5*@default-unit;
+				}
+			}
 		}
 	}
 }
