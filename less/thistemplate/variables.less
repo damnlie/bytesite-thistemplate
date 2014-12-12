@@ -5,7 +5,7 @@
 // Bootstrap
 @icon-font-path:						"../fonts/bootstrap/";
 
-// default 
+// default
 @default-unit:							20px;
 
 @headings-color:						@color-byte-dark;
@@ -36,7 +36,7 @@
 
 // Navbar-default
 @navbar-default-color:					@color-byte-dark;
-@navbar-default-bg:						white;
+@navbar-default-bg:						@color-white;
 @navbar-default-border:					transparent;
 
 // Navbar links
@@ -44,7 +44,7 @@
 @navbar-default-link-hover-color:		@color-byte-darker;
 @navbar-default-link-hover-bg:			transparent;
 @navbar-default-link-active-color:		@color-byte-darker;
-@navbar-default-link-active-bg:			white;
+@navbar-default-link-active-bg:			@color-white;
 @navbar-default-link-disabled-color:	#ccc;
 @navbar-default-link-disabled-bg:		transparent;
 
@@ -59,7 +59,7 @@
 @btn-font-size-small:					@font-size-small;
 @btn-border-width:						2px;
 @btn-success-bg-hover:					@color-lime-darker;
-@btn-success-border:					white;
+@btn-success-border:					@color-white;
 
 //== Forms
 //
@@ -82,7 +82,7 @@
 @border-radius-small:					6px;
 
 //== Tables
-@table-border-color:					white;
+@table-border-color:					@color-white;
 @table-border-width:					1px;
 @table-radius-size:						@border-radius-small;
 
@@ -92,12 +92,21 @@
 @panel-default-heading-bg:				transparent;
 
 @panel-secondary-border:				@brand-secondary;
-@panel-secondary-text:					white;
+@panel-secondary-text:					@color-white;
 @panel-secondary-heading-bg:			@brand-secondary;
 
 @panel-table-text:						inherit;
-@panel-table-border:					white;
+@panel-table-border:					@color-white;
 @panel-table-heading-bg:				transparent;
+
+@panel-bg-byte-text:					@color-white;
+@panel-bg-byte-link:					@color-white;
+@panel-bg-byte-heading-bg:				@color-byte;
+
+@panel-bg-byte-dark-text:				@color-white;
+@panel-bg-byte-dark-link:				@color-lime-lighter;
+@panel-bg-byte-dark-heading-bg:			@color-byte-darker-x;
+
 @panel-block-border:					transparent;
 @panel-block-text:						@color-byte-dark;
 @panel-block-title:						@color-byte-dark;
@@ -121,3 +130,6 @@
 
 @ul-bg-accent:							@color-byte-lighter-xx;
 
+//== Dropdowns
+//
+@dropdown-minwidth:						160px;

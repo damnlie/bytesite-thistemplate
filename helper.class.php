@@ -27,10 +27,10 @@ class ThisTemplateHelper
 		$doc->setHeadData($head);
 
 		// New meta
-		//$doc->setMetadata( 'X-UA-Compatible', 'IE=edge,chrome=1' );
-		//$doc->setMetadata( 'viewport', 'width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes' );
-		//$doc->setMetadata( 'HandheldFriendly', 'true' );
-		//$doc->setMetadata( 'apple-mobile-web-app-capable', 'yes' );
+		$doc->setMetadata( 'X-UA-Compatible', 'IE=edge,chrome=1' );
+		$doc->setMetadata( 'viewport', 'width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes' );
+		$doc->setMetadata( 'HandheldFriendly', 'true' );
+		$doc->setMetadata( 'apple-mobile-web-app-capable', 'yes' );
 		//$doc->setMetadata( 'copyright', $site_title );
 
 		//Yandex and Google Webmaster-tools if you wish
