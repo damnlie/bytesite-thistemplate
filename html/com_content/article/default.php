@@ -19,8 +19,8 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 		$pageclass			= $this->pageclass_sfx;
 
 		switch(true) {
-			case strpos($pageclass,'com_content-default'):
-				echo $this->loadTemplate('bootstrapped');
+			case strpos($pageclass,'com_content-vacatures'):
+				echo $this->loadTemplate('vacature');
 				break;
 
 			default:

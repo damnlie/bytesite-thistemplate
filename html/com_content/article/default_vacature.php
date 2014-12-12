@@ -180,17 +180,18 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 	<div itemprop="articleBody">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-10 col-md-offset-1 padding-both">
+				<div class="col-md-11 padding-top">
 					<div class="introtext clearfix">
 						<div class="row">
-							<div class="col-md-3 padding-top-2x">
-								<?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
+							<div class="col-md-3">
+								<?php //if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
+								<?php if (true) : ?>
 								<?php $imgfloat = (empty($images->float_fulltext)) ? $params->get('float_fulltext') : $images->float_fulltext; ?>
 								<div class="pull-<?php echo htmlspecialchars($imgfloat); ?> item-image"> <img
 								<?php if ($images->image_fulltext_caption):
 									echo 'class="caption"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';
 								endif; ?>
-								src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>" itemprop="image" class="img-responsive" /> </div>
+								src="/images/pages/vacatures/bytepet.png<?php //echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>" itemprop="image" class="img-responsive" /> </div>
 								<?php endif; ?>
 							</div>
 							<div class="col-md-9">
@@ -198,7 +199,9 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 							</div>
 						</div>
 					</div>
-					<div class="fulltext padding-both">
+				</div>
+				<div class="col-md-10 col-md-offset-1 padding-bottom">
+					<div class="fulltext padding-bottom">
 						<?php echo $this->item->fulltext; ?>
 					</div>
 				</div>
