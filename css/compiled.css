@@ -7922,6 +7922,37 @@ a.list-group-item-danger.active:focus {
   margin: 0;
   padding: 10px;
 }
+.panel-block-dashed {
+  border-color: #ffffff;
+  border-style: dashed;
+  border-radius: 0;
+}
+.panel-block-dashed > .panel-heading {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+}
+.panel-block-dashed > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ffffff;
+}
+.panel-block-dashed > .panel-heading .badge {
+  color: transparent;
+  background-color: #ffffff;
+}
+.panel-block-dashed > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ffffff;
+}
+.panel-block-dashed > .panel-heading {
+  border-radius: 0;
+}
+.panel-block-dashed > .panel-heading .h3 {
+  margin: 0;
+  padding: 10px;
+}
+.panel-block-dashed > .panel-heading .h3 + .h4 {
+  margin: 0;
+  padding: 10px;
+}
 .panel-icon.fa {
   display: block;
   float: left;
