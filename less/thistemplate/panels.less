@@ -94,6 +94,23 @@
 	}
 }
 
+.panel-block-dashed {
+	.panel-variant(@panel-block-dashed-border; @panel-block-dashed-text; @panel-block-dashed-heading-bg; @panel-block-dashed-border);
+	border-style: dashed;
+	border-radius:0;
+	> .panel-heading {
+		border-radius:0;
+		.h3 {
+			margin:0;
+			padding:0.5*@default-unit;
+		}
+		.h3 + .h4 {
+			margin:0;
+			padding:0.5*@default-unit;
+		}
+	}
+}
+
 .panel-icon {
 	&.fa {
 		display:block;
